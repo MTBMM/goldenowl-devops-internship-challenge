@@ -91,7 +91,7 @@ jobs:
             # update docker-compose.yml to use new tag (simple sed)
             # If docker-compose uses placeholder IMAGE_TAG, replace it
             if grep -q "IMAGE_TAG" docker-compose.yml; then
-              sed -i "s/IMAGE_TAG/${{ needs.build-and-push.outputs.image_tag }}/g" docker-compose.yml
+              sed -i "s/\${IMAGE_TAG}/${{ needs.build-and-push.outputs.image_tag }}/g" docker-compose.yml
             fi
             # bring up (recreate containers)
             docker-compose -f docker-compose.yml pull || true
