@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    image: kiennguyentrung408772/kiencicd:${IMAGE_TAG}
+    container_name: my-node-app
+    restart: always
+    ports:
+      - "80:3000"   # map port 3000 container -> 80 host
+    environment:
+      NODE_ENV: production
+      # thêm biến env cần thiết (không commit bí mật!)
+    healthcheck:
+      interval: 30s
+      timeout: 5s
+      retries: 3
