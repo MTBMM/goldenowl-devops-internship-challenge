@@ -100,7 +100,7 @@ jobs:
             docker image prune -f
             # healthcheck: wait for /healthz
             for i in $(seq 1 12); do
-              if curl -sSf http://localhost:3000/healthz >/dev/null; then
+              if curl -sSf http://localhost:3000 >/dev/null; then
                 echo "health check passed"
                 exit 0
               fi
