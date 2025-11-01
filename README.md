@@ -21,57 +21,58 @@ The architecture is designed for scalability, security, and fault tolerance acro
 
 🧩 Architecture Components
 
-The Terraform code provisions the following resources:
+    The Terraform code provisions the following resources:
 
-VPC (Virtual Private Cloud) – Isolated network environment for all resources
+    VPC (Virtual Private Cloud) – Isolated network environment for all resources
 
-Subnets
+    Subnets
 
-Public Subnets for ALB (Application Load Balancer) and NAT Gateways
+    Public Subnets for ALB (Application Load Balancer) and NAT Gateways
 
-Private Subnets for EC2 instances running the application
+    Private Subnets for EC2 instances running the application
 
-Internet Gateway (IGW) – Enables internet access for resources in public subnets
+    Internet Gateway (IGW) – Enables internet access for resources in public subnets
 
-NAT Gateway – Allows private subnet instances to access the internet securely
+    NAT Gateway – Allows private subnet instances to access the internet securely
 
-Route Tables – Configured for public/private routing
+    Route Tables – Configured for public/private routing
 
-Application Load Balancer (ALB) – Distributes incoming traffic across multiple EC2 instances
+    Application Load Balancer (ALB) – Distributes incoming traffic across multiple EC2 instances
 
-Auto Scaling Group (ASG) – Automatically scales the number of EC2 instances based on load
+    Auto Scaling Group (ASG) – Automatically scales the number of EC2 instances based on load
 
-Launch Template – Defines the AMI, instance type, and bootstrap configuration for EC2
+    Launch Template – Defines the AMI, instance type, and bootstrap configuration for EC2
 
-Security Groups – Control inbound and outbound traffic rules
+    Security Groups – Control inbound and outbound traffic rules
 
-IAM Roles & Policies – Grant EC2 instances necessary permissions (e.g., CloudWatch, S3 access)
+    IAM Roles & Policies – Grant EC2 instances necessary permissions (e.g., CloudWatch, S3 access)
 
 ⚙️ Deployment Steps
+
 1️⃣ Prerequisites
 
-AWS account
+    AWS account
 
-AWS CLI configured (aws configure)
+    AWS CLI configured (aws configure)
 
-Terraform installed (>= v1.3)
+    Terraform installed (>= v1.3)
 
-SSH key pair (for EC2 access)
+    SSH key pair (for EC2 access)
 
 2️⃣ Initialize Terraform
-terraform init
+    terraform init
 
 3️⃣ Validate configuration
-terraform validate
+    terraform validate
 
 4️⃣ Plan deployment
-terraform plan -out=tfplan
+    terraform plan -out=tfplan
 
 5️⃣ Apply changes
-terraform apply tfplan
+    terraform apply tfplan
 
 6️⃣ Get the ALB endpoint
-terraform output alb_dns_name
+    terraform output alb_dns_name
 
 
 Access your web application via:
