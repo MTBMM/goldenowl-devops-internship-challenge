@@ -10,6 +10,8 @@ Your mission, should you choose to accept it, is to craft a CI job that:
 3. Establishes an automated CI/CD build process using GitHub Actions workflow and a container registry service such as DockerHub or Amazon Elastic Container Registry (ECR) or similar services.
 4. Initiates CI tests automatically when changes are pushed to the feature branch on GitHub.
 5. Utilizes GitHub Actions for Continuous Deployment (CD) to deploy the application to major cloud providers like AWS EC2, AWS ECS or Google Cloud (please submit the deployment link).
+
+    https://res.cloudinary.com/dqmgpnwlk/video/upload/v1761974462/MTBMM_goldenowl-devops-internship-challenge_-_Google_Chrome_2025-11-01_00-45-00_fhhwmu.mp4
 ## Nice to have 🎨
 We would be genuinely delighted if you could complement your submission with a `visual flow diagram`, illustrating the sequence of tasks you performed, including the implementation of a `load balancer` and `auto scaling` for the deployed application. This additional touch would greatly enhance our understanding and appreciation of your work.
 
@@ -79,6 +81,20 @@ Access your web application via:
 
 http://<alb_dns_name>
 Reference tools for creating visual flow diagrams:
+
+    Cụ thể, họ muốn bạn trình bày trực quan các bước triển khai (deployment flow), ví dụ:
+
+    Code được push lên GitHub.
+
+    GitHub Actions (CI/CD pipeline) build Docker image, push lên Docker Hub.
+
+    EC2 instance pull image mới, chạy container thông qua docker-compose.
+
+    Application Load Balancer (ALB) phân phối request đến nhiều EC2 instances (hoặc containers).
+
+    Auto Scaling Group (ASG) tự động thêm/bớt EC2 instances dựa trên CPU/traffic.
+
+Người dùng truy cập qua DNS / domain → ALB → EC2 containers.
 - https://www.drawio.com/
 - https://excalidraw.com/
 - https://www.eraser.io/
