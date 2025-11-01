@@ -100,7 +100,4 @@ Reference tools for creating visual flow diagrams:
     Auto Scaling Group (ASG) tự động thêm/bớt EC2 instances dựa trên CPU/traffic.
 
 Người dùng truy cập qua DNS / domain → ALB → EC2 containers.
-- https://www.drawio.com/
-- https://excalidraw.com/
-- https://www.eraser.io/
-  
+
